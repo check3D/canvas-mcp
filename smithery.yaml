@@ -1,0 +1,42 @@
+name: canvas-mcp
+description: A Model Context Protocol server to run locally and connect to a Canvas LMS
+tools:
+  python:
+    version: "3.x"
+    dependencies:
+      - pip:
+          requirements: requirements.txt
+  shell:
+    version: bash
+linting:
+  enabled: true
+  python:
+    flake8:
+      enabled: true
+    black:
+      enabled: true
+    isort:
+      enabled: true
+testing:
+  python:
+    pytest:
+      enabled: true
+      coverage: true
+security:
+  dependency-scanning: true
+  secret-scanning: true
+  sast:
+    enabled: true
+documentation:
+  auto-generate: true
+  formats:
+    - markdown
+    - docstring
+ci:
+  enabled: true
+  runs-on: ubuntu-latest
+  python-versions:
+    - "3.8"
+    - "3.9"
+    - "3.10"
+    - "3.11"
